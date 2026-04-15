@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #e6ecf0;
+        }
+
+        .main {
+            width: 350px;
+            margin: 80px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        .item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="main">
+
+    <h2>Student Form</h2>
+
+    <form id="form2">
+        Name:
+        <input type="text" id="name">
+
+        Roll Number:
+        <input type="text" id="roll">
+
+        Class:
+        <input type="text" id="class">
+
+        Section:
+        <input type="text" id="section">
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+var form = document.getElementById("form2");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var roll = document.getElementById("roll").value;
+    var class1 = document.getElementById("class").value;
+    var section = document.getElementById("section").value;
+
+    var div = document.createElement("div");
+    div.className = "item";
+
+    div.innerHTML = "<b>Name:</b> " + name + "<br>" +
+                    "<b>Roll:</b> " + roll + "<br>" +
+                    "<b>Class:</b> " + class1 + "<br>" +
+                    "<b>Section:</b> " + section;
+
+    document.getElementById("output").appendChild(div);
+
+    form.reset();
+
+});
+
+</script>
+
+</body>
+</html>
